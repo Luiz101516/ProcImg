@@ -1,6 +1,43 @@
 {% extends 'index.html' %}
 
 {% block mainContent %}
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-8">Converter HSV para RGB</h1>
+      <p class="lead">Converter um valor HSV (matiz, saturação, valor) para RGB (vermelho, verde, azul) envolve alguns cálculos. O modelo de cores HSV é frequentemente usado porque ele representa cores de forma mais intuitiva, com matiz indicando a cor em si, saturação indicando a "pureza" da cor e valor indicando a luminosidade ou brilho da cor.</p>
+    </div>
+  </div>
 
-  
+  <br />
+
+  <form class="container" action="{{ url_for('convert_hsv_to_rgb') }}" method="post">
+    <div class="row">
+      <div class="col-lg-2 col-md-3">
+        <label for="matriz">Selecione o valor de H:</label>
+        <input id="matriz" type="number" class="form-control" name="matriz" min="0" max="360" placeholder="360°" required />
+      </div>
+
+      <div class="col-lg-2 col-md-3">
+        <label for="saturacao">Selecione o valor de S:</label>
+        <input id="saturacao" type="number" class="form-control" name="saturacao" min="0" max="100" placeholder="100%" required />
+      </div>
+
+      <div class="col-lg-2 col-md-3">
+        <label for="valor">Selecione o valor de V:</label>
+        <input id="valor" type="number" class="form-control" name="valor" min="0" max="100" placeholder="100%" required />
+      </div>
+    </div>
+
+    <div class="row mt-3">
+      <div class="col-lg-3">
+        <input type="submit" value="Converter" class="btn btn-primary" />
+      </div>
+    </div>
+
+    <div class="row mt-3">
+      <div class="col-lg-2 col-md-3">
+        <input id="colorpickerResult" type="color" class="form-control color-input" name="colorResult" value="{{ result }}" disabled />
+      </div>
+    </div>
+  </form>
 {% endblock %}

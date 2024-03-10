@@ -1,0 +1,48 @@
+{% extends 'index.html' %}
+
+{% block mainContent %}
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-8">Converter CMYK para RGB</h1>
+      <p class="lead">Converter um valor CMYK para RGB envolve a transformação dos valores de cor de um espaço de cor para outro. CMYK (Cyan, Magenta, Yellow, Black) e RGB (Red, Green, Blue) são dois espaços de cores diferentes amplamente utilizados em design gráfico, impressão e digital.</p>
+    </div>
+  </div>
+
+  <br />
+
+  <form class="container" action="{{ url_for('convert_cmyk_to_rgb') }}" method="post">
+    <div class="row">
+      <div class="col-lg-2 col-md-3">
+        <label for="cyan">Selecione o valor de C:</label>
+        <input id="cyan" type="number" class="form-control" name="cyan" min="0" max="100" placeholder="100%" required />
+      </div>
+      
+      <div class="col-lg-2 col-md-3">
+        <label for="magenta">Selecione o valor de M:</label>
+        <input id="magenta" type="number" class="form-control" name="magenta" min="0" max="100" placeholder="100%" required />
+      </div>
+
+      <div class="col-lg-2 col-md-3">
+        <label for="yellow">Selecione o valor de Y:</label>
+        <input id="yellow" type="number" class="form-control" name="yellow" min="0" max="100" placeholder="100%" required />
+      </div>
+
+      <div class="col-lg-2 col-md-3">
+        <label for="black">Selecione o valor de K:</label>
+        <input id="black" type="number" class="form-control" name="black" min="0" max="100" placeholder="100%" required />
+      </div>
+    </div>
+
+    <div class="row mt-3">
+      <div class="col-lg-3">
+        <input type="submit" value="Converter" class="btn btn-primary" />
+      </div>
+    </div>
+
+    <div class="row mt-3">
+      <div class="col-lg-2 col-md-3">
+        <input id="colorpickerResult" type="color" class="form-control color-input" name="colorResult" value="{{ result }}" disabled />
+      </div>
+    </div>
+  </form>
+{% endblock %}

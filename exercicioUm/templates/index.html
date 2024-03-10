@@ -29,8 +29,8 @@
             <a class="nav-link" href="{{url_for('normalize_rgb')}}">Normalizar RGB</a>
             <a class="nav-link" href="{{url_for('rgb_to_hsv')}}">RGB para HSV</a>
             <a class="nav-link" href="{{url_for('hsv_to_rgb')}}">HSV para RGB</a>
-            <a class="nav-link" href="{{url_for('rgb_to_cmky')}}">RGB para CMYK</a>
-            <a class="nav-link" href="{{url_for('cmky_to_rgb')}}">CMYK para RGB</a>
+            <a class="nav-link" href="{{url_for('rgb_to_cmyk')}}">RGB para CMYK</a>
+            <a class="nav-link" href="{{url_for('cmyk_to_rgb')}}">CMYK para RGB</a>
             <a class="nav-link" href="{{url_for('rgb_to_grey')}}">RGB para Escala de Cinza</a>
           </div>
         </div>
@@ -38,6 +38,14 @@
     </nav>
 
     {% block mainContent %}
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <h1 class="display-8">Exercício 1</h1>
+        <p class="lead">Nome: Luiz Augusto</p>
+        <p class="lead">RA: 101516</p>
+      </div>
+    </div>
+
 
     {% endblock %}
 

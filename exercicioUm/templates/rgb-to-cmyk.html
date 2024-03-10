@@ -1,17 +1,17 @@
 {% extends 'index.html' %}
 
 {% block mainContent %}
-  <div class="jumbotron jumbotron-fluid">
+<div class="jumbotron jumbotron-fluid">
     <div class="container">
-      <h1 class="display-8">Normalizar RGB</h1>
-      <p class="lead">Ao Normalizar um RGB você aumentará os valores de brilho da camada de forma que o ponto mais escuro 
-        se torne preto e o ponto mais brilhoso se torne o mais brilhoso possível, sem alterar sua tonalidade.</p>
+      <h1 class="display-8">Converter RGB para CMYK</h1>
+      <p class="lead">Converter um valor RGB para CMYK envolve a conversão de um espaço de cores aditivas 
+        (RGB - Red, Green, Blue) para um espaço de cores subtrativas (CMYK - Cyan, Magenta, Yellow, Black).</p>
     </div>
   </div>
 
   <br />
 
-  <form class="container" action="{{ url_for('normalize') }}" method="post">
+  <form class="container" action="{{ url_for('convert_rgb_to_cmyk') }}" method="post">
     <div class="row">
       <label for="colorpicker">Seletor de Cores:</label>
       <div class="col-lg-2 col-md-3">
@@ -19,7 +19,7 @@
       </div>
 
       <div class="col-lg-3">
-        <input type="submit" value="Normalizar" class="btn btn-primary" />
+        <input type="submit" value="Converter" class="btn btn-primary" />
       </div>
     </div>
 
@@ -29,4 +29,5 @@
       </div>
     </div>
   </form>
+  
 {% endblock %}
