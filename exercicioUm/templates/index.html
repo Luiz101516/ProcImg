@@ -23,30 +23,41 @@
       <div class="container-fluid">
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav">
-            <a class="navbar-brand" href="{{url_for('main')}}">Conversor</a>
+            <a class="navbar-brand" href="{{ url_for('main') }}">Conversor</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-            <a class="nav-link active" aria-current="page" href="{{url_for('main')}}">Início</a>
-            <a class="nav-link" href="{{url_for('normalize_rgb')}}">Normalizar RGB</a>
-            <a class="nav-link" href="{{url_for('rgb_to_hsv')}}">RGB para HSV</a>
-            <a class="nav-link" href="{{url_for('hsv_to_rgb')}}">HSV para RGB</a>
-            <a class="nav-link" href="{{url_for('rgb_to_cmyk')}}">RGB para CMYK</a>
-            <a class="nav-link" href="{{url_for('cmyk_to_rgb')}}">CMYK para RGB</a>
-            <a class="nav-link" href="{{url_for('rgb_to_grey')}}">RGB para Escala de Cinza</a>
+            <a class="nav-link active" aria-current="page" href="{{ url_for('main') }}">Início</a>
+            <a class="nav-link" href="{{ url_for('normalize_rgb') }}">Normalizar RGB</a>
+            <a class="nav-link" href="{{ url_for('rgb_to_hsv') }}">RGB para HSV</a>
+            <a class="nav-link" href="{{ url_for('hsv_to_rgb') }}">HSV para RGB</a>
+            <a class="nav-link" href="{{ url_for('rgb_to_cmyk') }}">RGB para CMYK</a>
+            <a class="nav-link" href="{{ url_for('cmyk_to_rgb') }}">CMYK para RGB</a>
+            <a class="nav-link" href="{{ url_for('rgb_to_grey') }}">RGB para Escala de Cinza</a>
           </div>
         </div>
       </div>
     </nav>
 
     {% block mainContent %}
-    <div class="jumbotron jumbotron-fluid">
-      <div class="container">
-        <h1 class="display-8">Exercício 1</h1>
-        <p class="lead">Nome: Luiz Augusto</p>
-        <p class="lead">RA: 101516</p>
+      <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+          <h1 class="display-8">Exercício 1</h1>
+          <p class="lead">Nome: Luiz Augusto</p>
+          <p class="lead">RA: 101516</p>
+        </div>
       </div>
-    </div>
 
-
+      <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+          <div class="list-group">
+            <a class="list-group-item list-group-item-action" href="{{ url_for('normalize_rgb') }}">Normalizar RGB</a>
+            <a class="list-group-item list-group-item-action" href="{{ url_for('rgb_to_hsv') }}">RGB para HSV</a>
+            <a class="list-group-item list-group-item-action" href="{{ url_for('hsv_to_rgb') }}">HSV para RGB</a>
+            <a class="list-group-item list-group-item-action" href="{{ url_for('rgb_to_cmyk') }}">RGB para CMYK</a>
+            <a class="list-group-item list-group-item-action" href="{{ url_for('cmyk_to_rgb') }}">CMYK para RGB</a>
+            <a class="list-group-item list-group-item-action" href="{{ url_for('rgb_to_grey') }}">RGB para Escala de Cinza</a>
+          </div>
+        </div>
+      </div>
     {% endblock %}
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>

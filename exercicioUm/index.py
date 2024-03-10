@@ -45,7 +45,7 @@ def normalize():
 
 def sum_normalized_rgb(rgb):
     normalized_values = [component / 255.0 for component in rgb]
-    return str(sum(normalized_values))
+    return str(round(sum(normalized_values),2))
 
 @app.route("/rgb-to-hsv", methods=["post"])
 def convert_rgb_to_hsv():
