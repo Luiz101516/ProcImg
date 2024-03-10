@@ -1,0 +1,33 @@
+{% extends 'index.html' %}
+
+{% block mainContent %}
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-8">Converter RGB para CMYK</h1>
+      <p class="lead">Converter um valor RGB para CMYK envolve a conversão de um espaço de cores aditivas 
+        (RGB - Red, Green, Blue) para um espaço de cores subtrativas (CMYK - Cyan, Magenta, Yellow, Black).</p>
+    </div>
+  </div>
+
+  <br />
+
+  <form class="container" action="{{ url_for('convert_rgb_to_cmyk') }}" method="post">
+    <div class="row">
+      <label for="colorpicker">Seletor de Cores:</label>
+      <div class="col-lg-2 col-md-3">
+        <input id="colorpicker" type="color" class="form-control color-input" name="color" />
+      </div>
+
+      <div class="col-lg-3">
+        <input type="submit" value="Converter" class="btn btn-primary" />
+      </div>
+    </div>
+
+    <div class="row mt-3">
+      <div class="col-lg-3">
+        <input type="text" class="form-control" placeholder="Resultado" value="{{ result }}" />
+      </div>
+    </div>
+  </form>
+  
+{% endblock %}
