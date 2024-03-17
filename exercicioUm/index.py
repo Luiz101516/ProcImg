@@ -104,7 +104,8 @@ def convert_rgb_to_grey():
     color = request.form["color"]
     rgb = hex_to_rgb(color)
     rgb_grey_scale = rgb_to_grey(rgb)
-    return render_template("rgb-to-grey.html", result=str(rgb_to_hex(rgb_grey_scale)))
+    r, g, b = rgb_grey_scale
+    return render_template("rgb-to-grey.html", result=str(rgb_to_hex(rgb_grey_scale)), result_number=str(r))
 
 def rgb_to_grey(rgb):
     r, g, b = rgb
@@ -117,7 +118,7 @@ def convert_hsv_to_rgb():
     s = request.form["saturacao"]
     v = request.form["valor"]
     rgb_value = hsv_to_rgb(float(h), float(s), float(v))
-    return render_template("hsv-to-rgb.html", result=str(rgb_to_hex(rgb_value)))
+    return render_template("hsv-to-rgb.html", result=str(rgb_to_hex(rgb_value)), result_number=str(rgb_value))
     
 def hsv_to_rgb(h, s, v):
     h /= 360.0
@@ -156,7 +157,7 @@ def convert_cmyk_to_rgb():
     k = request.form["black"]
     
     rgb_value = cmyk_to_rgb(float(c), float(m), float(y), float(k))
-    return render_template("cmyk-to-rgb.html", result=str(rgb_to_hex(rgb_value)))
+    return render_template("cmyk-to-rgb.html", result=str(rgb_to_hex(rgb_value)), result_number=str(rgb_value))
 
 def cmyk_to_rgb(c, m, y, k):
     c /= 100.0

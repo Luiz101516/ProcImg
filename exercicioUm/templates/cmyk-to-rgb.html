@@ -40,8 +40,13 @@
     </div>
 
     <div class="row mt-3">
+      <label for="colorpicker">Resultado:</label>
       <div class="col-lg-2 col-md-3">
         <input id="colorpickerResult" type="color" class="form-control color-input" name="colorResult" value="{{ result }}" disabled />
+      </div>
+
+      <div class="col-lg-2 col-md-3">
+        <input type="text" class="form-control" placeholder="0" value="{{ result_number }}" disabled />
       </div>
     </div>
   </form>
