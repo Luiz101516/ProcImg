@@ -1,0 +1,26 @@
+{% extends 'index.html' %}
+
+{% block mainContent %}
+<form class="container" action="{{ url_for('tratar_imagem') }}" method="post" enctype="multipart/form-data">
+    <div class="row">
+
+        <div class="col-lg-4 col-md-3">
+            <label for="img">selecione a Imagem:</label>
+            <input type="file" id="img" name="imagem" class="form-control" accept="image/*">
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col-lg-3">
+            <input type="submit" value="Converter" class="btn btn-primary" />
+        </div>
+    </div>
+    
+    <div class="row mt-3">
+        <div class="col-lg-3">
+            <h2>Canais R, G, B</h2>
+            <input type="text" class="form-control" placeholder="0" value="{{ result }}" disabled />
+        </div>
+    </div>
+</form>
+{% endblock %}
