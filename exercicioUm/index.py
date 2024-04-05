@@ -171,4 +171,4 @@ def cmyk_to_rgb(c, m, y, k):
     return round(r), round(g), round(b)
     
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run()
