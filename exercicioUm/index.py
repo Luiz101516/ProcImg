@@ -6,7 +6,7 @@ app = Flask(__name__)
 def main():
     return render_template("index.html")
 
-@app.route("/normalize-rgb")
+@app.route("/templates/normalize-rgb")
 def normalize_rgb():
     return render_template("normalize-rgb.html")
 
