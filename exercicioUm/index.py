@@ -2,11 +2,11 @@ from flask import Flask, render_template, url_for, request
 
 app = Flask(__name__)
 
-@app.route("exercicioUm/templates/")
+@app.route("/")
 def main():
     return render_template("index.html")
 
-@app.route("exercicioUm/templates/normalize-rgb")
+@app.route("/normalize-rgb")
 def normalize_rgb():
     return render_template("normalize-rgb.html")
 
